@@ -123,7 +123,7 @@
     .about-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
     .skill-tag { padding: 5px 14px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); background: rgba(12,18,35,0.6); transition: all 0.2s; }
     .skill-tag:hover { border-color: var(--gold); color: var(--gold); }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    . { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .stat-card { background: rgba(18,26,48,0.7); border: 1px solid var(--border); border-radius: 10px; padding: 24px 20px; position: relative; overflow: hidden; backdrop-filter: blur(10px); transition: border-color 0.3s, transform 0.3s; }
     .stat-card:hover { border-color: var(--border-md); transform: translateY(-3px); }
     .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
@@ -252,6 +252,69 @@
       .about-grid, .services-grid, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
       footer { padding: 24px; flex-direction: column; align-items: flex-start; }
     }
+    /* ── Tools Row ── */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.tools-row {
+  grid-column: 1 / -1;
+  background: rgba(18,26,48,0.7);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 20px 18px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+.tools-row::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.tools-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 14px;
+}
+.tools-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tool-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  background: rgba(201,168,76,0.07);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: default;
+}
+.tool-chip:hover {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+}
+.tool-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 3px;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(40%) saturate(500%) hue-rotate(10deg) brightness(95%);
+}
+.tool-chip span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
   </style>
 </head>
 <body>
@@ -338,16 +401,21 @@
     <div class="tools-list">
 
       <!-- Canva -->
-      <div class="tool-chip">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/canva.svg" alt="Canva" class="tool-icon" />
-        <span>Canva</span>
-      </div>
+<!-- Canva -->
+<div class="tool-chip">
+  <img src="am.png" alt="Alight Motion" class="tool-icon" />
+  <span>Alight Motion</span>
+</div>
 
-      <!-- Alight Motion -->
+<!-- Alight Motion -->
+<div class="tool-chip">
+  <img src="capcut.png" alt="Capcut" class="tool-icon" />
+  <span>Capcut</span>
+</div>
       <div class="tool-chip">
-        <img src="https://play-lh.googleusercontent.com/nYhPa3M2h3RQd_iSjMBwLOMQwPbsYOY_3V12gGBv0xLSN2UHrQ_lqFAKuJYxm9H2CA=s180" alt="Alight Motion" class="tool-icon" />
-        <span>Alight Motion</span>
-      </div>
+  <img src="canva.png" alt="Canva" class="tool-icon" />
+  <span>Canva</span>
+</div>
 
     </div>
   </div>
