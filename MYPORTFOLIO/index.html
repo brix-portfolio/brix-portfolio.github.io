@@ -662,7 +662,9 @@ function renderLightbox() {
   const mediaType = d.mediaType || 'image';
 
   // Image only — no title/description text in fullscreen
-  inner.innerHTML = mediaType === 'video'
+inner.innerHTML = mediaType === 'youtube'
+    ? `<iframe class="lightbox-video" style="aspect-ratio:9/16; max-height:90vh; width:auto; height:90vh;" src="https://www.youtube.com/embed/${mediaSrc}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`
+    : mediaType === 'video'
     ? `<video class="lightbox-video" controls autoplay><source src="${mediaSrc}" type="video/mp4"></video>`
     : `<img class="lightbox-media" src="${mediaSrc}" alt="${d.title || ''}" />`;
 
